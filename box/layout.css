@@ -1,0 +1,41 @@
+body {
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.yla {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.yla div {
+    padding: 0.5em;
+    background-color: cyan;
+    width: 40%;    
+    text-align: center;
+}
+#iso {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.a1 {
+    padding: 2em;
+    background-color: cyan;
+    width: 40%;
+}
+.b2 {
+    background-color: yellow;
+    width: 20%;
+    padding: 2em;
+}
+.c3 {
+    background-color: red;
+    width: 40%;
+    padding: 2em;
+}
+#iso > div > * {
+    text-align: center;
+}
