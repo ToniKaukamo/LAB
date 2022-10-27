@@ -1,0 +1,63 @@
+/** color pallet 
+Storm: #0c2431 
+Teal: #194a50 
+Sunburst: #d37556 
+Sand: #d8a28c
+Cloud: #e1dad2
+**/
+body {
+    background-color:  #e1dad2;
+}
+.grid-container {
+    display: inline-grid;
+}
+nav * {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    padding: 0em 1em 1em 1em;
+    background-color: #194a50;
+}
+h1 {
+    font-size: 1.5em;
+}
+#grid-p1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #d8a28c;
+    padding: 0.5em;
+}
+#grid-p1 > * {
+    width: 50%;
+    padding: 1em;
+    font-size: large;
+}
+#grid-p1 div p {
+    padding-bottom: 1em;
+}
+#grid-p2 {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: stretch;
+}
+.box {
+    flex-grow: 1;
+    border: 3px solid black;
+    text-align: center;
+} 
+.boxbig {
+    flex-grow: 2;
+    border: 3px solid black;
+    text-align: center;
+}
+img {
+    display: block;
+    width: 100%;
+}
+iframe {
+    width: 100%;
+    height: 60%
+}

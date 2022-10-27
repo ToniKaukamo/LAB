@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML flex demonstration</title>
+    <link href="./reset.css" rel="stylesheet">
+    <link href="./layout.css" rel="stylesheet">
+</head>
+<body>
+<div class="grid-container">
+<!-- Navigation -->
+    <nav>
+        <ul>
+            <h1>Flex demonstration</h1>
+            <li><a>Home</a></li>
+            <li><a>example</a></li>
+            <li><a>alpmaxe</a></li>
+            <li><a>About</a></li>
+        </ul>
+    </nav>
+    <h1>Navigation content are put into a row using "flex-direction: row;"</h1>
+    <br>
+    <!--Flex demostrastion p1-->
+    <h1>Demonstration 1 - In the sand colored area there are 2 containers in a row and the content inside them are in columns</h1>
+    <div id="grid-p1">
+        <div>
+            <h1>Picture of moon halo by Curt Stump</h1> 
+            <img src="https://curtstump.com/wp-content/uploads/2020/01/moon-halo-1200.jpg" alt="Picture of moon halo by Curt Stump">    
+        </div>
+        <div>
+            <h1>Breaking news</h1>
+            <p>Local bear walked into the store for some snacks and the clerk filmed the encounter</p>
+            <iframe src="https://www.youtube.com/embed/ThB-7EIPPT4" title="Huge brown bear enters 7-Eleven store and helps itself to CANDY BARS 🐻 | SWNS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!--Flex demostrastion p2-->
+<h1> Demonstration 2 - flex grow boxes 2 and 6 take more space than the other due to flex-grow: 2</h1>
+    <div id="grid-p2">
+        <div class="box">1</div>
+        <div class="boxbig">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="boxbig">6</div>
+    </div>
+    <!--Flex demostrastion p3-->
+
+    <!--Flex demostrastion p4-->
+</div>
+</body>
+</html>
