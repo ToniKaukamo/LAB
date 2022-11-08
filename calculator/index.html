@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculators</title>
+</head>
+<body>
+    <form id="calc1">
+        <div>
+            <h1>Task 1. Calculator with text box and dropdown list</h1>
+            <div>
+                <input type="text" id="num11">
+                <select name="operator" id="operator-1">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" id="num12">
+                <input type="button" id="submitOne" value="=">
+                <b id="result-1">Press = mark!</b>
+            </div>
+        </div>
+    </form>
+    <form id="calc2">
+        <div>
+            <h1>Task 2. calculator with text box and option buttons</h1>
+            <input type="text" id="num21">
+            <input type="radio" id="+" name="operator-2" value="+">
+                <label for="+">Addition</label><br>
+            <input type="radio" name="operator-2" id="-">
+                <label for="-">Subtraction</label><br>
+            <input type="radio" name="operator-2" id="*">
+                <label for="*">Multiplication</label><br>
+            <input type="radio" name="operator-2" id="/">
+                <label for="/">Distribution</label><br>
+            <input type="text" id="num22">
+            <input type="button" id="submitTwo" value="=">
+            <b id="result-2">Press = mark!</b>
+        </div>
+    </form>
+    <form id="calc3" onsubmit="return false">
+        <div>
+            <h1>Task 3. Calculator with text box and increment/decrement buttons</h1>
+            <div>
+                <button id="inc1" onclick="increment1()">↑</button>
+                <input type="number" id="num31" value="0">
+                <button id="dec1" onclick="decrement1()">↓</button>
+                <select name="operator" id="operator-3">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <button type="button" id="inc2" onclick="increment2()">↑</button>
+                <input type="number" id="num32">
+                <button type="button" id="dec2" onclick="decrement2()">↓</button>
+                <input type="button" id="submitThree" value="=">
+                <b id="result-3">Press = mark!</b>
+            </div>
+        </div>
+    </form>
+<script src="./script.js"></script>
+</body>
+</html>
