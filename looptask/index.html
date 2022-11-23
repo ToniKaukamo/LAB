@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three prorams</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">    
+    <div>
+        <h1>First program</h1>
+        <p>Number must be positive</p>
+        <input type="Number" name="p1Num" id="p1Num">
+        <p id="res1">?</p>
+        <button onclick="firstProgram()">Check</button>
+    </div>
+
+    <div>
+        <h1>Second program</h1>
+        <p>Number must be over 1</p>
+        <input type="Number" name="p2Num" id="p2Num">
+        <p id="res2">?</p>
+        <button onclick="secondProgram()">Check</button>
+    </div>
+
+    <div>
+        <h1>Third program</h1>
+        <p>Calculates </p>
+        <input type="Number" name="p3Num" id="p3Num">
+        <p id="resultOdd"></p>
+        <p id="resultEven"></p>
+        <button onclick="thirdProgram()">Check</button>
+    </div>
+</div>
+
+
+
+    <script>
+        function firstProgram() {
+            let Num = document.getElementById("p1Num").value;
+            if (Num >= 1) {
+                for (let i = Num - 1; i >= 1; i--) {
+                    Num *= i;
+                }
+            } else if(Num == 0) {
+                Num = 1;
+            } else {
+                Num = "Unspecified"
+            }
+            document.getElementById("res1").innerHTML = Num;
+        }
+
+        function secondProgram() {
+            let Num = parseFloat(document.getElementById("p2Num").value);
+            if (Num >= 1) {
+                for (let i = Num - 1; i >= 1; i--) {
+                    Num += i;
+                }
+            } else {
+                Num = "Unspecified"
+            }
+            document.getElementById("res2").innerHTML = Num;
+        }
+        function thirdProgram() {
+            let resultEven = 0;
+            let resultOdd = 0;
+            let Num = parseFloat(document.getElementById("p3Num").value);
+            if (Num >= 1) {
+                for (let i = 0; i <= Num; i++) {
+                    if (i % 2 == 0){
+                        resultEven += i;
+                    } else if(i%2==1) {
+                        resultOdd += i;
+                    } else {
+                        console.log("Something went wrong!")
+                    }
+                }
+            } else {
+                Num = "Unspecified"
+            }
+            document.getElementById("resultEven").innerHTML = `Sum of Odd = ${resultEven}`;
+            document.getElementById("resultOdd").innerHTML = `Sum of Even = ${resultOdd}`;
+        }
+    </script>
+</body>
+</html>
