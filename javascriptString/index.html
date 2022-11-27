@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String task</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">    
+        <div>
+            <h1>First program</h1>
+            <p>Tells you how many letters are in the phrase</p>
+            <input type="text" name="p1text" id="p1text">
+            <p id="amountL"></p>
+            <button onclick="firstProgram()">Check</button>
+        </div>
+    
+        <div>
+            <h1>Second program</h1>
+            <p>Tells you how many vowel are in the phrase</p>
+            <input type="text" name="p2text" id="p2text">
+            <p id="amountVowel"></p>
+            <button onclick="secondProgram()">Check</button>
+        </div>
+    
+        <div>
+            <h1>Third program</h1>
+            <p>Tells you if the word is a palindrome</p>
+            <input type="text" name="p3text" id="p3text">
+            <p id="palindrome"></p>
+            <button onclick="thirdProgram()">Check</button>
+        </div>
+    </div>
+
+    <script>
+        function firstProgram() {
+            let phrase = document.getElementById("p1text").value;
+            let amount = (`${phrase}`.match(/l/g)||[]).length;
+            document.getElementById("amountL").innerHTML = `${phrase} contains ${amount}xL characters`;
+        }
+        function secondProgram() {
+            let phrase = document.getElementById("p2text").value;
+            let amount = `${phrase}`.match(/[aeiouyåäö]/gi).length;
+            document.getElementById("amountVowel").innerHTML = `${phrase} contains ${amount} vowels.`;
+        }
+        function thirdProgram() {
+            let phrase = document.getElementById("p3text").value;
+            let reversePhrase = "";
+            for (let i = phrase.length - 1; i >= 0; i--) {
+                reversePhrase += phrase[i];
+            } 
+            console.log(reversePhrase)
+            console.log(phrase)
+            isnot = "";
+            if (phrase === reversePhrase) {
+                isnot = "";
+            } else if (phrase != reversePhrase) {
+                isnot = "NOT";
+            } else {
+                console.log("It broke")
+            }
+            document.getElementById("palindrome").innerHTML = `${phrase} is ${isnot} palindrome`
+        }
+               
+    </script>
+</body>
+</html>
