@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google maps</title>
+</head>
+<body>
+    <h1>Javascript - Google maps</h1>
+    <iframe id="mapFrame"
+        src="https://www.google.com/maps?q=Yliopistonkatu36Lappeenranta&output=embed"
+        width="50%" height="600px" frameBorder="0">
+    </iframe>
+    <h3>Search for a place</h3>
+    <label>Street address: </label><input type="text" id="address"> <label>City: </label><input type="text" id="city"><input value="Search" type="button" onclick="newAddress()">
+    <script>
+        function newAddress() {
+            city = document.getElementById("city").value
+            address = document.getElementById("address").value
+            document.getElementById("mapFrame").src = "https://www.google.com/maps?q="+address+city+"&output=embed"
+        }
+    </script>
+</body>
+</html>
