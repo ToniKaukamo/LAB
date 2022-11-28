@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h1>First program</h1>
+            <input type="text" id="p1text">
+            <!-- Female or Male-->
+            <p id="sex"></p>
+            <!-- Year,month,day -->
+            <p id="age"></p>
+
+            <p id="result1">Example: 261101A1901</p>
+            <button onclick="checkSSN()">Check</button>
+        </div>
+        <div>
+            <h1>Second program</h1>
+            <label for="p2bday">Give a birthday</label>
+            <!-- Add automaticly updating min date to be realistic and max date to be yesterday -->
+            <input type="date" id="p2bday" name="p2bday" value="2000-01-01" min="1910-01-01" max="2022-11-27">
+            <p id="newSsn"></p>
+            <button onclick="generateSSN()">Get new SSN</button>
+        </div>
+
+
+    </div>
+    <script>
+        // function for validating dates
+    
+    function checkSSN() {
+        // get ssn as parameter with clikc for multiple time use
+        // Check date validity days 01-31, months 1-12 , year ??
+        var ssn = document.getElementById("p1text").value;
+        // Can be combined into 1 line of text
+        // more readable this way
+        let bday = ssn.slice(0,6)
+        let lnum = ssn.slice(7,10)
+        let combined = bday + lnum;
+        let remainder = parseInt(combined) % 31;
+        // ^
+        var checkNum = {
+            0 : "0",
+            1 : "1",
+            2 :	"2",
+            3 :	"3",
+            4 :	"4",
+            5 :	"5",
+            6 :	"6",
+            7 :	"7",
+            8 :	"8",
+            9 :	"9",
+            10 : "A",
+            11 : "B",
+            12 : "C",
+            13 : "D",
+            14 : "E",
+            15 : "F",
+            16 : "H",
+            17 : "J",
+            18 : "K",
+            19 : "L",
+            20 : "M",
+            21 : "N",
+            22 : "P",
+            23 : "R",
+            24 : "S",
+            25 : "T",
+            26 : "U",
+            27 : "V",
+            28 : "W",
+            29 : "X",
+            30 : "Y"
+        }
+        if (checkNum[remainder] == ssn.slice(10,11)) {
+            document.getElementById("result1").innerHTML = "It's correct";
+        } else {
+            document.getElementById("result1").innerHTML = "It's not correct";
+        }
+    }
+    // parameter checkNum
+    function generateSSN() {
+        // Uses given date and generate valid SSN based on that
+        // validate date
+        var date = document.getElementById("p2bday").value; // string 2000-01-01
+        let formatDate = date.slice(8,10) + date.slice(5,7) + date.slice(0,2);  //010120
+        var yearSuffix = {
+            "20" : 'A',
+            "19" : '-'
+        }
+        var checkNum = {
+            0 : "0",
+            1 : "1",
+            2 :	"2",
+            3 :	"3",
+            4 :	"4",
+            5 :	"5",
+            6 :	"6",
+            7 :	"7",
+            8 :	"8",
+            9 :	"9",
+            10 : "A",
+            11 : "B",
+            12 : "C",
+            13 : "D",
+            14 : "E",
+            15 : "F",
+            16 : "H",
+            17 : "J",
+            18 : "K",
+            19 : "L",
+            20 : "M",
+            21 : "N",
+            22 : "P",
+            23 : "R",
+            24 : "S",
+            25 : "T",
+            26 : "U",
+            27 : "V",
+            28 : "W",
+            29 : "X",
+            30 : "Y"
+        }
+        let letterDate = yearSuffix[date.slice(0,2)];
+        // Combine the numbers and use checkNum for the last thingy
+        let threeNum = Math.floor(Math.random() * 999);
+        // Makes numbers under 100 have leading zeros
+        let leadZero = threeNum.toString();
+        while (leadZero.length < 3) leadZero = '0' + leadZero;
+        // Formats the variables into a new social security number
+        let combined = formatDate + leadZero;
+        let checkNumber = parseInt(combined) % 31;
+        let newSsn = formatDate + yearSuffix[date.slice(0,2)] + leadZero + checkNum[checkNumber];
+        document.getElementById("newSsn").innerHTML = newSsn;
+    }
+    </script>
+</body>
+</html>
