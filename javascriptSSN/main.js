@@ -1,4 +1,3 @@
-// function for validating dates
 var checkNum = {
     0 : "0",
     1 : "1",
@@ -59,10 +58,11 @@ function getAge() {
 }
 function checkSSN() {
     // Doesn't know if month has 31 or 30 days.
-    let dateRegex = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])(0[1-9]|1[0-2])(0[1-9]|[0-9][0-9])$/ //Cases 01-31 01-12 01-99
+    let dateRegex = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])(0[1-9]|1[0-2])(0[1-9]|[0-9][0-9])$/ //Cases 01-31 01-12 00-99
     var Ssn = document.getElementById("p1text").value;
     var birthDate = Ssn.slice(0,6);
     let personalNum = Ssn.slice(7,10);
+
     if (parseInt(personalNum)%2==0){
         document.getElementById("sex").innerHTML = "Female";
     } else {
